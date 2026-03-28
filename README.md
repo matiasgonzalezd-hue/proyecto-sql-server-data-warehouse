@@ -145,12 +145,12 @@ Todos los procedimientos almacenados utilizados para la carga de datos deben seg
 | Columnas técnicas | `dwh_<nombre_columna>` |
 | Procedimientos ETL | `carga_<capa>` |
 
-🎯 Objetivo de estas convenciones
+## 🎯 Objetivo de estas convenciones
 
 Estas reglas de nombramiento buscan:
 
-Mantener la consistencia en todo el proyecto
-Facilitar la lectura y mantenimiento del código
-Mejorar la trazabilidad entre capas
-Alinear el modelo con buenas prácticas de Data Warehousing
-Hacer que el proyecto sea más escalable y profesional
+- Mantener la **consistencia** en todo el proyecto
+- Facilitar la **lectura y mantenimiento** del código
+- Mejorar la **trazabilidad** entre capas
+- Alinear el modelo con buenas prácticas de **Data Warehousing**
+- Hacer que el proyecto sea más **escalable y profesional**
