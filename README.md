@@ -32,130 +32,118 @@ En la capa **Bronze**, los nombres de las tablas deben comenzar con el nombre de
 
 **Estructura:**
 
-```text
-<sistema_origen>_<entidad>
+`<sistema_origen>_<entidad>`
 
-Donde:
+**Donde:**
+- `<sistema_origen>`: nombre del sistema fuente, por ejemplo: `crm`, `erp`, `sales`, etc.
+- `<entidad>`: nombre original de la tabla en el sistema fuente
 
-<sistema_origen>: nombre del sistema fuente, por ejemplo: crm, erp, sales, etc.
-<entidad>: nombre original de la tabla en el sistema fuente
+**Ejemplos:**
+- `erp_info_clientes`
+- `crm_ventas`
+- `erp_productos`
 
-Ejemplos:
+> 📍 Objetivo: conservar la trazabilidad y fidelidad respecto al sistema de origen.
 
-erp_info_clientes
-crm_ventas
-erp_productos
+### 🥈 Capa Silver
+En la capa **Silver**, los nombres de las tablas también deben comenzar con el nombre del sistema de origen y conservar el nombre original de la entidad.
 
-📍 Objetivo: conservar la trazabilidad y fidelidad respecto al sistema de origen.
+**Estructura:**
 
-🥈 Capa Silver
+`<sistema_origen>_<entidad>`
 
-En la capa Silver, los nombres de las tablas también deben comenzar con el nombre del sistema de origen y conservar el nombre original de la entidad.
+**Donde:**
+- `<sistema_origen>`: nombre del sistema fuente
+- `<entidad>`: nombre original de la tabla procesada
 
-Estructura:
+**Ejemplos:**
+- `erp_info_clientes`
+- `crm_ventas`
+- `erp_productos`
 
-<sistema_origen>_<entidad>
+> 📍 Objetivo: mantener consistencia entre Bronze y Silver, facilitando el seguimiento del linaje de datos.
 
-Donde:
+### 🥇 Capa Gold
+En la capa **Gold**, los nombres deben ser descriptivos y alineados a la lógica de negocio, utilizando un prefijo según el tipo de tabla.
 
-<sistema_origen>: nombre del sistema fuente
-<entidad>: nombre original de la tabla procesada
+**Estructura:**
 
-Ejemplos:
+`<categoria>_<entidad>`
 
-erp_info_clientes
-crm_ventas
-erp_productos
+**Donde:**
+- `<categoria>`: rol de la tabla dentro del modelo analítico
+  - `dim` → tabla de dimensión
+  - `fact` → tabla de hechos
+- `<entidad>`: nombre funcional y descriptivo de la entidad de negocio
 
-📍 Objetivo: mantener consistencia entre Bronze y Silver, facilitando el seguimiento del linaje de datos.
+**Ejemplos:**
+- `dim_clientes`
+- `dim_productos`
+- `fact_ventas`
 
-🥇 Capa Gold
+> 📍 Objetivo: facilitar el entendimiento del modelo dimensional para análisis y reportería.
 
-En la capa Gold, los nombres deben ser descriptivos y alineados a la lógica de negocio, utilizando un prefijo según el tipo de tabla.
+## 🧾 Convenciones para el nombramiento de columnas
 
-Estructura:
+### 🔑 Llaves surrogadas
+Todas las **Primary Keys (PK)** de las tablas dimensionales deben utilizar el sufijo `_key`.
 
-<categoria>_<entidad>
+**Estructura:**
 
-Donde:
+`<nombre_tabla>_key`
 
-<categoria>: rol de la tabla dentro del modelo analítico
-dim → tabla de dimensión
-fact → tabla de hechos
-<entidad>: nombre funcional y descriptivo de la entidad de negocio
+**Ejemplos:**
+- `cliente_key`
+- `producto_key`
+- `tiempo_key`
 
-Ejemplos:
+> 📍 Estas columnas representan llaves surrogadas generadas internamente en el Data Warehouse.
 
-dim_clientes
-dim_productos
-fact_ventas
+### 🛠️ Columnas técnicas
+Todas las columnas técnicas o de metadata deben comenzar con el prefijo `dwh_`, seguido de un nombre descriptivo.
 
-📍 Objetivo: facilitar el entendimiento del modelo dimensional para análisis y reportería.
+**Estructura:**
 
-🧾 Convenciones para el nombramiento de columnas
-🔑 Llaves surrogadas
+`dwh_<nombre_columna>`
 
-Todas las Primary Keys (PK) de las tablas dimensionales deben utilizar el sufijo _key.
+**Ejemplos:**
+- `dwh_fecha_carga`
+- `dwh_fecha_actualizacion`
+- `dwh_origen_registro`
 
-Estructura:
+**Propósito:**
+- Registrar metadata del proceso de carga
+- Facilitar auditoría y trazabilidad
+- Apoyar controles de calidad y seguimiento de ETL
 
-<nombre_tabla>_key
-
-Ejemplos:
-
-cliente_key
-producto_key
-tiempo_key
-
-📍 Estas columnas representan llaves surrogadas generadas internamente en el Data Warehouse.
-
-🛠️ Columnas técnicas
-
-Todas las columnas técnicas o de metadata deben comenzar con el prefijo dwh_, seguido de un nombre descriptivo.
-
-Estructura:
-
-dwh_<nombre_columna>
-
-Ejemplos:
-
-dwh_fecha_carga
-dwh_fecha_actualizacion
-dwh_origen_registro
-
-Propósito:
-
-Registrar metadata del proceso de carga
-Facilitar auditoría y trazabilidad
-Apoyar controles de calidad y seguimiento de ETL
-⚙️ Convenciones para procedimientos almacenados
+## ⚙️ Convenciones para procedimientos almacenados
 
 Todos los procedimientos almacenados utilizados para la carga de datos deben seguir una convención simple y consistente.
 
-Estructura:
+**Estructura:**
 
-carga_<capa>
+`carga_<capa>`
 
-Donde:
+**Donde:**
+- `<capa>`: representa la capa objetivo del proceso de carga
 
-<capa>: representa la capa objetivo del proceso de carga
+**Ejemplos:**
+- `carga_bronce`
+- `carga_plata`
+- `carga_oro`
 
-Ejemplos:
+> 📍 Esta nomenclatura permite identificar rápidamente el propósito del procedimiento y la capa que alimenta.
 
-carga_bronce
-carga_plata
-carga_oro
+## ✅ Resumen de estándares
 
-📍 Esta nomenclatura permite identificar rápidamente el propósito del procedimiento y la capa que alimenta.
-
-✅ Resumen de estándares
-Elemento	Convención
-Tablas Bronze	<sistema_origen>_<entidad>
-Tablas Silver	<sistema_origen>_<entidad>
-Tablas Gold	<categoria>_<entidad>
-Llaves surrogadas	<nombre_tabla>_key
-Columnas técnicas	dwh_<nombre_columna>
-Procedimientos ETL	carga_<capa>
+| Elemento | Convención |
+|----------|------------|
+| Tablas Bronze | `<sistema_origen>_<entidad>` |
+| Tablas Silver | `<sistema_origen>_<entidad>` |
+| Tablas Gold | `<categoria>_<entidad>` |
+| Llaves surrogadas | `<nombre_tabla>_key` |
+| Columnas técnicas | `dwh_<nombre_columna>` |
+| Procedimientos ETL | `carga_<capa>` |
 🎯 Objetivo de estas convenciones
 
 Estas reglas de nombramiento buscan:
