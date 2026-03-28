@@ -1,72 +1,167 @@
-# proyecto-sql-server-data-warehouse
-Construccion de un DataWarehouse moderno por capas utilizando SQL Server, incluyendo procesos de ETL, modelado de Datos y Analiticas
+# 🏗️ Proyecto SQL Server Data Warehouse
 
--------------------------------------
------Consideraciones Generales-------
--------------------------------------
+Construcción de un **Data Warehouse moderno por capas** utilizando **SQL Server**, incluyendo procesos de **ETL**, **modelado de datos** y **analítica**.
 
-Convención de Nombres: Se utilizará el enfoque "snake_case", con letras en minúsculas y guiones bajo ( _ ) para separar las palabras, Ejemplos; dim_productos, fecha_orden, precio_unitario,etc
-Lenguaje: Se utilizará el lenguaje español
-Evitar el uso de palabras reservadas de SQL en nombres: No usar palabras reservadas de SQL  como nombres de objetos
+---
 
+## 📌 Consideraciones Generales
 
-----------------------------------------------------------
------Consideraciones para el Nombramiento de Tablas-------
-----------------------------------------------------------
+### 🔤 Convención de nombres
+Se utilizará la convención **snake_case**, es decir:
 
-Reglas para la Capa de Bronce
+- Letras en minúsculas
+- Separación de palabras mediante guion bajo (`_`)
 
--Todos los nombres deben comenzar con el nombre del sistema de origen y los nombres de las tablas deben coincidir conel nombre original sin renombrarlo
-- <sistemaorigen>_<entidad>
-	<sistemaorigen>: Nombre del sistema de origen. Ejemplos (crm, erp, folder_name, etc)
-	<entidad>: Nombre exacto de la tabla del sitema de origen.
-	Ejemplos: erp_info_clientes ----> Información de los clientes desde el ERP
+**Ejemplos:**
+- `dim_productos`
+- `fecha_orden`
+- `precio_unitario`
 
-Reglas para la Capa de Plata
+### 🌎 Idioma
+Todo el proyecto utilizará **nomenclatura en español**, tanto en objetos como en documentación, siempre que sea compatible con buenas prácticas técnicas.
 
--Todos los nombres deben comenzar con el nombre del sistema de origen y los nombres de las tablas deben coincidir conel nombre original sin renombrarlo
-- <sistemaorigen>_<entidad>
-	<sistemaorigen>: Nombre del sistema de origen. Ejemplos (crm, erp, folder_name, etc)
-	<entidad>: Nombre exacto de la tabla del sitema de origen.
-	Ejemplos: erp_info_clientes ----> Información de los clientes desde el ERP
+### ⚠️ Palabras reservadas
+Se debe **evitar el uso de palabras reservadas de SQL** como nombres de tablas, columnas, vistas, procedimientos almacenados u otros objetos.
 
-Reglas para la Capa de Oro
+---
 
--Todos los nombres deben usar nombres decriptivos segun la logica de negocio comenzando con el prefijo de la categoria.
-- <categoria>_<entidad>
-	<categorria>: Describe el rol de la tabla, como por ejemplo dim (dimension) o fact (tabla de hechos).
-	<entidad>: Nombre descriptivo de la Tabla, alineando a la logica de negocio ejemplos (clientes, productos, ventas)
-	Ejemplos: dim_clientes, fact_ventas, dim_productos, etc
+## 🧱 Convenciones para el nombramiento de tablas
 
+### 🥉 Capa Bronze
+En la capa **Bronze**, los nombres de las tablas deben comenzar con el nombre del sistema de origen y mantener el nombre original de la entidad sin renombrarla.
 
-----------------------------------------------------------
------Consideraciones para el Nombramiento de Columnas-----
-----------------------------------------------------------
+**Estructura:**
 
-Llaves Surrogadas
+```text
+<sistema_origen>_<entidad>
 
-	Todas las PK (Primary Keys) en las tablas dimensionales deben usar el sufijo _key
-	<nombre_tabla>_key
-		<nombre_tabla>: Se refiere al nombre de la tabla o entidad a la que pertenece
-		<_key>: Un sufijo indicando que esta columna es una Llave Surrogada
-		Ejemplo: cliente_key --> Sería una llave surrogada en la tabla dim_customers
+Donde:
 
-Columnas Técnicas
-	Todas las columnas tecnicas deben empezar con el prefijo dwh_, seguido de un nombre descriptivo indicado el proposito de la columna
-	dwh: Prefijo exclusivo para metadata generada por el sistema
-	<nombre_columna>: Nombre descriptivo de la columna indicando el proposito de la columna
-	Ejemplo: dwh_fecha_carga ---> Columna generada por el sistema usada para guardar la fecha en la que los registros fueron cargados
+<sistema_origen>: nombre del sistema fuente, por ejemplo: crm, erp, sales, etc.
+<entidad>: nombre original de la tabla en el sistema fuente
 
-Procedimientos Almacenados
--Todos los procedimientos almacenados usados para la carga de la data deben seguir el siguien patron de nombre: carga_<capa>
-	<capa>: Representa la capa en la que se esta realizando la carga de data, como bronce, plata, oro
-	Ejemplos:
-	carga_bronce --> Procedimiento Almacenado para cargar la data en la capa de bronce
-	carga_plata --> Procedimiento Almacenado para cargar la data en la capa de plata
+Ejemplos:
 
+erp_info_clientes
+crm_ventas
+erp_productos
 
+📍 Objetivo: conservar la trazabilidad y fidelidad respecto al sistema de origen.
 
+🥈 Capa Silver
 
- 
+En la capa Silver, los nombres de las tablas también deben comenzar con el nombre del sistema de origen y conservar el nombre original de la entidad.
 
+Estructura:
 
+<sistema_origen>_<entidad>
+
+Donde:
+
+<sistema_origen>: nombre del sistema fuente
+<entidad>: nombre original de la tabla procesada
+
+Ejemplos:
+
+erp_info_clientes
+crm_ventas
+erp_productos
+
+📍 Objetivo: mantener consistencia entre Bronze y Silver, facilitando el seguimiento del linaje de datos.
+
+🥇 Capa Gold
+
+En la capa Gold, los nombres deben ser descriptivos y alineados a la lógica de negocio, utilizando un prefijo según el tipo de tabla.
+
+Estructura:
+
+<categoria>_<entidad>
+
+Donde:
+
+<categoria>: rol de la tabla dentro del modelo analítico
+dim → tabla de dimensión
+fact → tabla de hechos
+<entidad>: nombre funcional y descriptivo de la entidad de negocio
+
+Ejemplos:
+
+dim_clientes
+dim_productos
+fact_ventas
+
+📍 Objetivo: facilitar el entendimiento del modelo dimensional para análisis y reportería.
+
+🧾 Convenciones para el nombramiento de columnas
+🔑 Llaves surrogadas
+
+Todas las Primary Keys (PK) de las tablas dimensionales deben utilizar el sufijo _key.
+
+Estructura:
+
+<nombre_tabla>_key
+
+Ejemplos:
+
+cliente_key
+producto_key
+tiempo_key
+
+📍 Estas columnas representan llaves surrogadas generadas internamente en el Data Warehouse.
+
+🛠️ Columnas técnicas
+
+Todas las columnas técnicas o de metadata deben comenzar con el prefijo dwh_, seguido de un nombre descriptivo.
+
+Estructura:
+
+dwh_<nombre_columna>
+
+Ejemplos:
+
+dwh_fecha_carga
+dwh_fecha_actualizacion
+dwh_origen_registro
+
+Propósito:
+
+Registrar metadata del proceso de carga
+Facilitar auditoría y trazabilidad
+Apoyar controles de calidad y seguimiento de ETL
+⚙️ Convenciones para procedimientos almacenados
+
+Todos los procedimientos almacenados utilizados para la carga de datos deben seguir una convención simple y consistente.
+
+Estructura:
+
+carga_<capa>
+
+Donde:
+
+<capa>: representa la capa objetivo del proceso de carga
+
+Ejemplos:
+
+carga_bronce
+carga_plata
+carga_oro
+
+📍 Esta nomenclatura permite identificar rápidamente el propósito del procedimiento y la capa que alimenta.
+
+✅ Resumen de estándares
+Elemento	Convención
+Tablas Bronze	<sistema_origen>_<entidad>
+Tablas Silver	<sistema_origen>_<entidad>
+Tablas Gold	<categoria>_<entidad>
+Llaves surrogadas	<nombre_tabla>_key
+Columnas técnicas	dwh_<nombre_columna>
+Procedimientos ETL	carga_<capa>
+🎯 Objetivo de estas convenciones
+
+Estas reglas de nombramiento buscan:
+
+Mantener la consistencia en todo el proyecto
+Facilitar la lectura y mantenimiento del código
+Mejorar la trazabilidad entre capas
+Alinear el modelo con buenas prácticas de Data Warehousing
+Hacer que el proyecto sea más escalable y profesional
