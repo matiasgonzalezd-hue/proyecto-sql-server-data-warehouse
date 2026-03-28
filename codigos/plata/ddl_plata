@@ -1,15 +1,14 @@
 /*
+===============================================================================
+Script DDL: Crear Tablas Silver
+===============================================================================
 
-=====================================================================================
+Propósito del Script:
+    Este script crea tablas en el esquema 'silver', eliminando las tablas existentes
+    si ya existen.
+    Ejecute este script para redefinir la estructura DDL de las tablas de 'silver'.
 
-Código DDL: Crea las tablas de la capa plata
-
-=====================================================================================
-
-Propósito del Código:
-	Este código crea tablas en el schema 'plata', dropeando las tablas existentes
-	si esque existen.
-	Ejecutar este código para redefinir la estructura DDL de las tablas de 'plata'
+===============================================================================
 */
 
 IF OBJECT_ID('plata.crm_cust_info' , 'U') IS NOT NULL
