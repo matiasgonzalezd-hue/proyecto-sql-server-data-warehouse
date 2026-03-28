@@ -15,3 +15,22 @@
 | sexo_cliente | NVARCHAR(50) | Género del cliente (por ejemplo, 'Male', 'Female', 'n/a'). |
 | fecha_nacimiento | DATE | Fecha de nacimiento del cliente, con formato YYYY-MM-DD (por ejemplo, 1971-10-06). |
 | fecha_creacion | DATE | Fecha y hora en que el registro del cliente fue creado en el sistema. |
+
+## 2. gold.dim_products
+
+- **Propósito:** Proporciona información sobre los productos y sus atributos.
+- **Columnas:**
+
+| Nombre de columna | Tipo de dato | Descripción |
+|---|---|---|
+| product_key | INT | Clave sustituta que identifica de forma única cada registro de producto en la tabla de dimensión de productos. |
+| product_id | INT | Identificador único asignado al producto para seguimiento y referencia internos. |
+| product_number | NVARCHAR(50) | Código alfanumérico estructurado que representa al producto, usado con frecuencia para categorización o inventario. |
+| product_name | NVARCHAR(50) | Nombre descriptivo del producto, incluyendo detalles clave como tipo, color y tamaño. |
+| category_id | NVARCHAR(50) | Identificador único de la categoría del producto, que la vincula con su clasificación de alto nivel. |
+| category | NVARCHAR(50) | Clasificación general del producto (por ejemplo, Bicicletas, Componentes) para agrupar artículos relacionados. |
+| subcategory | NVARCHAR(50) | Clasificación más detallada del producto dentro de la categoría, como el tipo de producto. |
+| maintenance_required | NVARCHAR(50) | Indica si el producto requiere mantenimiento (por ejemplo, 'Sí', 'No'). |
+| cost | INT | Costo o precio base del producto, medido en unidades monetarias. |
+| product_line | NVARCHAR(50) | Línea o serie específica de producto a la que pertenece (por ejemplo, Road, Mountain). |
+| start_date | DATE | Fecha en que el producto estuvo disponible para la venta o uso. |
