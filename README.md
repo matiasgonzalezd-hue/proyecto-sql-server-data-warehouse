@@ -144,6 +144,7 @@ Todos los procedimientos almacenados utilizados para la carga de datos deben seg
 | Llaves surrogadas | `<nombre_tabla>_key` |
 | Columnas técnicas | `dwh_<nombre_columna>` |
 | Procedimientos ETL | `carga_<capa>` |
+
 🎯 Objetivo de estas convenciones
 
 Estas reglas de nombramiento buscan:
