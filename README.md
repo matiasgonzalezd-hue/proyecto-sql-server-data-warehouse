@@ -156,6 +156,8 @@ Estas reglas de nombramiento buscan:
 - Hacer que el proyecto sea más **escalable y profesional**
 
 ## 📁 Estructura de carpetas
+
+```text
 data-warehouse-project/
 │
 ├── datasets/                           # Datasets en bruto utilizados para el proyecto (datos ERP y CRM)
@@ -179,3 +181,4 @@ data-warehouse-project/
 ├── LICENSE                             # Información de licencia del repositorio
 ├── .gitignore                          # Archivos y carpetas que serán ignorados por Git
 └── requirements.txt                    # Dependencias y requisitos del proyecto
+```
