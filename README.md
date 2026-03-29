@@ -63,7 +63,7 @@ En la capa **Silver**, los nombres de las tablas también deben comenzar con el 
 
 > 📍 Objetivo: mantener consistencia entre Bronze y Silver, facilitando el seguimiento del linaje de datos.
 
-### 🥇 Capa Gold
+### 🥇 Capa Oro
 En la capa **Gold**, los nombres deben ser descriptivos y alineados a la lógica de negocio, utilizando un prefijo según el tipo de tabla.
 
 **Estructura:**
