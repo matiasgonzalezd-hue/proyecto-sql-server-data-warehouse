@@ -3,6 +3,10 @@
 Construcción de un **Data Warehouse moderno por capas** utilizando **SQL Server**, incluyendo procesos de **ETL**, **modelado de datos** y **analítica**.
 
 ---
+## 🏗️ Arquitectura de Datos
+La arquitectura de datos de este proyecto sigue el enfoque de Arquitectura Medallion, organizado en las capas Bronce, Plata y Oro:
+
+![Arquitectura de Datos](documentos/arquitectura_datos.png)
 
 ## 📌 Consideraciones Generales
 
