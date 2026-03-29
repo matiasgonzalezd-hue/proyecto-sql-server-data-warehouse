@@ -18,7 +18,7 @@ Se utilizará la convención **snake_case**, es decir:
 - `precio_unitario`
 
 ### 🌎 Idioma
-Todo el proyecto utilizará **nomenclatura en español**, tanto en objetos como en documentación, siempre que sea compatible con buenas prácticas técnicas.
+Todo el proyecto utilizará **nomenclatura en español**, tanto en objetos como en documentación, siempre que sea compatible con buenas prácticas técnicas excepto por la información del dataset que está en inglés sin embargo, se generaran nombres de columnas descriptivas en español en las views en SQL Server en la capa oro.
 
 ### ⚠️ Palabras reservadas
 Se debe **evitar el uso de palabras reservadas de SQL** como nombres de tablas, columnas, vistas, procedimientos almacenados u otros objetos.
