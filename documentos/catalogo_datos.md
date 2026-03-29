@@ -30,7 +30,24 @@
 | id_categoria | NVARCHAR(50) | Identificador único de la categoría del producto, que la vincula con su clasificación de alto nivel. |
 | categoria | NVARCHAR(50) | Clasificación general del producto (por ejemplo, Bicicletas, Componentes) para agrupar artículos relacionados. |
 | subcategoria | NVARCHAR(50) | Clasificación más detallada del producto dentro de la categoría, como el tipo de producto. |
-| Mantencion | NVARCHAR(50) | Indica si el producto requiere mantenimiento (por ejemplo, 'Sí', 'No'). |
+| Mantencion | NVARCHAR(50) | Indica si el producto requiere mantenimiento (por ejemplo, 'Yes', 'No'). |
 | costo | INT | Costo o precio base del producto, medido en unidades monetarias. |
 | linea_producto | NVARCHAR(50) | Línea o serie específica de producto a la que pertenece (por ejemplo, Road, Mountain). |
 | fecha_inicio | DATE | Fecha en que el producto estuvo disponible para la venta o uso. |
+
+## 3. oro.fact_ventas
+
+- **Propósito:** Almacena datos transaccionales de ventas para fines analíticos.
+- **Columnas:**
+
+| Nombre de columna | Tipo de dato | Descripción |
+|---|---|---|
+| numero_orden | NVARCHAR(50) | Identificador alfanumérico único para cada orden de venta (por ejemplo, 'SO54496'). |
+| producto_key | INT | Clave sustituta que vincula la orden con la tabla de dimensión de productos. |
+| cliente_key | INT | Clave sustituta que vincula la orden con la tabla de dimensión de clientes. |
+| fecha_orden | DATE | Fecha en que se realizó la orden. |
+| fecha_embarque | DATE | Fecha en que la orden fue enviada al cliente. |
+| fecha_vencimiento | DATE | Fecha de vencimiento del pago de la orden. |
+| ventas | INT | Valor monetario total de la venta para la línea del pedido, en unidades monetarias enteras (por ejemplo, 25). |
+| cantidad | INT | Cantidad de unidades del producto solicitadas en la línea del pedido (por ejemplo, 1). |
+| precio | INT | Precio por unidad del producto para la línea del pedido, en unidades monetarias enteras (por ejemplo, 25). |
