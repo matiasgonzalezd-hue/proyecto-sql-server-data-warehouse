@@ -154,3 +154,28 @@ Estas reglas de nombramiento buscan:
 - Mejorar la **trazabilidad** entre capas
 - Alinear el modelo con buenas prácticas de **Data Warehousing**
 - Hacer que el proyecto sea más **escalable y profesional**
+
+## 📁 Estructura de carpetas
+data-warehouse-project/
+│
+├── datasets/                           # Datasets en bruto utilizados para el proyecto (datos ERP y CRM)
+│
+├── docs/                               # Documentación del proyecto y detalles de arquitectura
+│   ├── etl.drawio                      # Archivo de Draw.io que muestra las diferentes técnicas y métodos de ETL
+│   ├── data_architecture.drawio        # Archivo de Draw.io que muestra la arquitectura del proyecto
+│   ├── data_catalog.md                 # Catálogo de datasets, incluyendo descripciones de campos y metadatos
+│   ├── data_flow.drawio                # Archivo de Draw.io para el diagrama de flujo de datos
+│   ├── data_models.drawio              # Archivo de Draw.io para los modelos de datos (esquema estrella)
+│   ├── naming-conventions.md           # Guía de nomenclatura consistente para tablas, columnas y archivos
+│
+├── scripts/                            # Scripts SQL para ETL y transformaciones
+│   ├── bronze/                         # Scripts para extraer y cargar datos en bruto
+│   ├── silver/                         # Scripts para limpiar y transformar datos
+│   ├── gold/                           # Scripts para crear modelos analíticos
+│
+├── tests/                              # Scripts de prueba y archivos de calidad
+│
+├── README.md                           # Descripción general del proyecto e instrucciones
+├── LICENSE                             # Información de licencia del repositorio
+├── .gitignore                          # Archivos y carpetas que serán ignorados por Git
+└── requirements.txt                    # Dependencias y requisitos del proyecto
