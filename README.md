@@ -158,22 +158,21 @@ Estas reglas de nombramiento buscan:
 ## 📁 Estructura de carpetas
 
 ```text
-data-warehouse-project/
+proyecto-sql-server-data-warehouse/
 │
+├── codigos/                            # Scripts SQL para ETL y transformaciones
+│   ├── bronce/                         # Scripts para extraer y cargar datos en bruto
+│   ├── plata/                         # Scripts para limpiar y transformar datos
+│   ├── oro/                           # Scripts para crear modelos analíticos
+│ 
 ├── datasets/                           # Datasets en bruto utilizados para el proyecto (datos ERP y CRM)
 │
-├── docs/                               # Documentación del proyecto y detalles de arquitectura
-│   ├── etl.drawio                      # Archivo de Draw.io que muestra las diferentes técnicas y métodos de ETL
-│   ├── data_architecture.drawio        # Archivo de Draw.io que muestra la arquitectura del proyecto
-│   ├── data_catalog.md                 # Catálogo de datasets, incluyendo descripciones de campos y metadatos
-│   ├── data_flow.drawio                # Archivo de Draw.io para el diagrama de flujo de datos
+├── documentos/                         # Documentación del proyecto y detalles de arquitectura
+│   ├── arquitectura_datos.png          # Archivo de Draw.io que muestra la arquitectura del proyecto
+│   ├── catalogo_datosg.md              # Catálogo de datasets, incluyendo descripciones de campos y metadatos
+│   ├── flujo_datos.png                 # Archivo de Draw.io para el diagrama de flujo de datos
 │   ├── data_models.drawio              # Archivo de Draw.io para los modelos de datos (esquema estrella)
-│   ├── naming-conventions.md           # Guía de nomenclatura consistente para tablas, columnas y archivos
-│
-├── scripts/                            # Scripts SQL para ETL y transformaciones
-│   ├── bronze/                         # Scripts para extraer y cargar datos en bruto
-│   ├── silver/                         # Scripts para limpiar y transformar datos
-│   ├── gold/                           # Scripts para crear modelos analíticos
+│   ├── integracion_datos.drawio        # Archivo de Draw.io que muestra como se integra la data en el DWH
 │
 ├── tests/                              # Scripts de prueba y archivos de calidad
 │
