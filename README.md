@@ -178,6 +178,5 @@ proyecto-sql-server-data-warehouse/
 │
 ├── README.md                           # Descripción general del proyecto e instrucciones
 ├── LICENSE                             # Información de licencia del repositorio
-├── .gitignore                          # Archivos y carpetas que serán ignorados por Git
 └── requirements.txt                    # Dependencias y requisitos del proyecto
 ```
