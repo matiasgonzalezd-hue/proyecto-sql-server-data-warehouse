@@ -19,7 +19,7 @@ Ejemplo de Uso:
     EXEC plata.load_plata;
 ===============================================================================
 */
-CREATE OR ALTER PROCEDURE plata.load_plata AS
+CREATE OR ALTER PROCEDURE plata.carga_plata AS
 BEGIN
 	DECLARE @inicio DATETIME, @fin DATETIME, @inicio_batch DATETIME, @fin_batch DATETIME
 	SET @inicio_batch = GETDATE();
