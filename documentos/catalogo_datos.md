@@ -16,7 +16,7 @@
 | fecha_nacimiento | DATE | Fecha de nacimiento del cliente, con formato YYYY-MM-DD (por ejemplo, 1971-10-06). |
 | fecha_creacion | DATE | Fecha y hora en que el registro del cliente fue creado en el sistema. |
 
-## 2. gold.dim_producto
+## 2. oro.dim_producto
 
 - **Propósito:** Proporciona información sobre los productos y sus atributos.
 - **Columnas:**
