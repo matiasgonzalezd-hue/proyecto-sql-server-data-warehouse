@@ -1,12 +1,12 @@
 /*
 ===============================================================================
-Script DDL: Crear Tablas Silver
+Script DDL: Crear Tablas Plata
 ===============================================================================
 
 Propósito del Script:
-    Este script crea tablas en el esquema 'silver', eliminando las tablas existentes
+    Este script crea tablas en el esquema 'plata', eliminando las tablas existentes
     si ya existen.
-    Ejecute este script para redefinir la estructura DDL de las tablas de 'silver'.
+    Ejecute este script para redefinir la estructura DDL de las tablas de 'plata'.
 
 ===============================================================================
 */
