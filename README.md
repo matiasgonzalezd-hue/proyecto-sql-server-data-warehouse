@@ -364,8 +364,6 @@ En esta página se analiza el desempeño del portafolio de productos:
 **Link del reporte en Power BI Service / publicación web:**  
 [Ver reporte en Power BI](https://app.powerbi.com/view?r=eyJrIjoiNmEzM2ZmOGMtNzI3Zi00ZGJmLWE2YjEtNGJhMzI0MDAxMGU0IiwidCI6ImI0OGZlNWNhLTI0ODMtNGU0MC1hNDk4LWVkYWU0ZjQyOGU5ZiJ9)
 
-> Reemplazar este placeholder por el enlace final del reporte publicado, si se desea compartir una versión online.
-
 ---
 
 ## 🧪 Principales aprendizajes del proyecto
