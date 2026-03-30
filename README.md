@@ -217,7 +217,7 @@ La capa **oro/gold** fue diseñada para ser consumida directamente por herramien
   - productos
   - comparativas temporales
 
-**[PLACEHOLDER_IMAGEN_MODELO_DIMENSIONAL]**
+![Modelo Domensional PBI](documentos/modelado_pbi.png)
 
 ---
 
@@ -331,7 +331,7 @@ En esta página se presenta una vista ejecutiva del negocio, incluyendo:
 - análisis por producto
 - selector de medida dinámico
 
-**[PLACEHOLDER_IMAGEN_DASHBOARD_GENERAL]**
+![DASHBOARD GENERAL](documentos/general_pbi.png)
 
 ---
 
@@ -343,7 +343,7 @@ En esta página se analizan patrones asociados al cliente:
 - análisis por estado marital
 - top clientes según la métrica seleccionada
 
-**[PLACEHOLDER_IMAGEN_DASHBOARD_CLIENTE]**
+![DASHBOARD CLIENTE](documentos/cliente_pbi.png)
 
 ---
 
@@ -355,7 +355,7 @@ En esta página se analiza el desempeño del portafolio de productos:
 - tabla analítica a nivel producto
 - navegación jerárquica del portafolio
 
-**[PLACEHOLDER_IMAGEN_DASHBOARD_PRODUCTO]**
+![DASHBOARD PRODUCTO](documentos/producto_pbi.png)
 
 ---
 
