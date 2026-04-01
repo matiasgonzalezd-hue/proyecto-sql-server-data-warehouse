@@ -411,13 +411,13 @@ proyecto-sql-server-data-warehouse/
 ├── documentos/                         # Documentación del proyecto y detalles de arquitectura
 │   ├── arquitectura_datos.png
 │   ├── catalogo_datos.md
+│   ├── cliente_pbi.png
 │   ├── flujo_datos.png
-│   ├── data_models.drawio
-│   ├── integracion_datos.drawio
+│   ├── general_pbi.png
+│   ├── integracion_datos.png
+│   ├── modelo_pbi.png
 │   ├── modelo_datos.png
-│   ├── [PLACEHOLDER_CAPTURA_GENERAL]
-│   ├── [PLACEHOLDER_CAPTURA_CLIENTE]
-│   └── [PLACEHOLDER_CAPTURA_PRODUCTO]
+│   └── producto_pbi.png
 │
 ├── tests/                              # Scripts de prueba y archivos de calidad
 │
