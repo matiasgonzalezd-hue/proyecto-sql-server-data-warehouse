@@ -423,3 +423,8 @@ proyecto-sql-server-data-warehouse/
 │
 ├── README.md                           # Descripción general del proyecto e instrucciones
 └── LICENSE                             # Información de licencia del repositorio
+
+# 👨‍💻 Autor
+
+**Matías González**  
+Analista de Datos | SQL Server | Power BI | Python | Excel
