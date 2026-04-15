@@ -426,7 +426,7 @@ proyecto-sql-server-data-warehouse/
 
 ---
 
-## 👨‍💻 Autor
+# 👨‍💻 Autor
 
 **Matías González**  
 Analista de Datos | SQL Server | Power BI | Python | Excel
