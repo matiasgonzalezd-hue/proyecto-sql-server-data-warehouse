@@ -401,14 +401,14 @@ Este proyecto permitió consolidar conocimientos en:
 ```text
 proyecto-sql-server-data-warehouse/
 │
-├── codigos/                            # Scripts SQL para ETL y transformaciones
-│   ├── bronce/                         # Scripts para extraer y cargar datos en bruto
-│   ├── plata/                          # Scripts para limpiar y transformar datos
-│   ├── oro/                            # Scripts para crear modelos analíticos
+├── codigos/                    # Scripts SQL para ETL y transformaciones
+│   ├── bronce/                 # Scripts para extraer y cargar datos en bruto
+│   ├── plata/                  # Scripts para limpiar y transformar datos
+│   └── oro/                    # Scripts para crear modelos analíticos
 │
-├── datasets/                           # Datasets en bruto utilizados para el proyecto (datos ERP y CRM)
+├── datasets/                   # Datasets en bruto utilizados para el proyecto (datos ERP y CRM)
 │
-├── documentos/                         # Documentación del proyecto y detalles de arquitectura
+├── documentos/                 # Documentación del proyecto y detalles de arquitectura
 │   ├── arquitectura_datos.png
 │   ├── catalogo_datos.md
 │   ├── cliente_pbi.png
@@ -419,14 +419,13 @@ proyecto-sql-server-data-warehouse/
 │   ├── modelo_datos.png
 │   └── producto_pbi.png
 │
-├── tests/                              # Scripts de prueba y archivos de calidad
+├── tests/                      # Scripts de prueba y archivos de calidad
 │
-├── README.md                           # Descripción general del proyecto e instrucciones
-└── LICENSE                             # Información de licencia del repositorio
+├── README.md                   # Descripción general del proyecto e instrucciones
+└── LICENSE                     # Información de licencia del repositorio
+```
 
----
-
-# 👨‍💻 Autor
+## 👨‍💻 Autor
 
 **Matías González**  
 Analista de Datos | SQL Server | Power BI | Python | Excel
